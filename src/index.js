@@ -18,22 +18,37 @@ app.use(bodyParser.json());
 
 app.use("/content", express.static(path.join(__dirname, "public")));
 
+
 app.get("/", (_, res) => {
-  /*
+  
   res.sendFile("./public/index.html", { root: __dirname });
-  */
-  res.status(501).end();
+  console.log("Hello");
+
+  // res.status(200).end();
 });
 
 app.get('/todos', (_, res) => {
-  /*
+  
   res.header("Content-Type","application/json");
   res.sendFile(todoFilePath, { root: __dirname });
-  */
-  res.status(501).end();
+  
+  // res.status(200).end();
+});
+
+//Add GET request with path '/todos/id'
+
+app.get('/todos', (_, res) => {
+  
+  res.header ("Content-Type", "application/json");
+  res.sendFile("01507581-9d12-a4c4-06bb-19d539a11189", { root: _dirname });
+  
+  // res.status(200).end();
+
 });
 
 //Add GET request with path '/todos/overdue'
+
+
 
 //Add GET request with path '/todos/completed'
 
